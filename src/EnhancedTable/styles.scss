@@ -1,0 +1,40 @@
+.enhanced-table{
+
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+
+  .MuiTableHead-root{
+    border-bottom: 1px solid #ddd;
+    //background-color: $white;
+    color: white;
+    border-top: none !important;
+
+    tr{
+      height: 69px;
+    }
+  }
+
+  .MuiTableCell-root{
+    font-size: 14px;
+    border-bottom: none;
+    //color: $darkest-grey;
+
+    &.MuiTableCell-head{
+      //font-family: $font-family-bold;
+      //color: $darker-grey;
+      text-align: center;
+    }
+
+    &.MuiTableCell-body{
+      text-align: left;
+    }
+  }
+
+  tbody{
+    .MuiTableCell-root{
+      vertical-align: top;
+    }
+  }
+
+}
