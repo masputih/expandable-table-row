@@ -17,6 +17,7 @@ function renderRows(tbProps){
 
 
   function renderContent(rowprops, rowstate){
+    console.log('[renderContent renderContent] rowprops', rowprops);
     return <TableCell colSpan={rowprops.children.length}>
       {`SECONDARY, colspan: ${rowprops.children.length}`}
     </TableCell>
@@ -25,6 +26,7 @@ function renderRows(tbProps){
   return data.map((row,i)=>{
     console.log('[renderRows row] ', row);
     return <ExpandableRow key={`row-${i}`}
+                          rowIndex={i}
                           secondaryRenderer={(rowprops, rowstate)=>{
                             return renderContent(rowprops, rowstate)
                           }}>
