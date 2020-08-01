@@ -13,7 +13,7 @@ const ExpandableRow = props => {
   const cname = 'expandable-row';
 
   return <React.Fragment>
-    <TableRow className={cname + ' primary'} onClick={()=>{
+    <TableRow className={`${cname} primary`} onClick={()=>{
       setState(curr =>{
         return {
           ...curr,
@@ -24,7 +24,7 @@ const ExpandableRow = props => {
       { props.children }
     </TableRow>
     {
-      state.expanded && <TableRow className={cname +' secondary'}>
+      state.expanded && <TableRow className={`${cname} secondary`}>
         {
           props.secondaryRenderer(props,state)
         }
