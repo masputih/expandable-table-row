@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom'
 import EnhancedTable from './EnhancedTable';
 import {TableRow, TableCell} from '@material-ui/core';
-import ExpandableRow from './ExpandableRow';
+import StackedRow from './StackedRow';
 
 
 function renderRows(tbProps){
@@ -16,19 +16,20 @@ function renderRows(tbProps){
   ]
 
 
-  function renderContent(rowprops, rowstate){
+  function renderSecondaryRow(rowprops, rowstate){
     console.log('[renderContent renderContent] rowprops', rowprops);
     return <TableCell colSpan={rowprops.children.length}>
-      {`SECONDARY, colspan: ${rowprops.children.length}`}
+      {`${rowprops.name} SECONDARY, colspan: ${rowprops.children.length}`}
     </TableCell>
   }
 
   return data.map((row,i)=>{
     console.log('[renderRows row] ', row);
-    return <ExpandableRow key={`row-${i}`}
+    return <StackedRow key={`row-${i}`}
                           rowIndex={i}
+                          name={`ROW-${i+1}`}
                           secondaryRenderer={(rowprops, rowstate)=>{
-                            return renderContent(rowprops, rowstate)
+                            return renderSecondaryRow(rowprops, rowstate)
                           }}>
       {
         row.map( (cell,j)=>{
@@ -40,7 +41,7 @@ function renderRows(tbProps){
           </TableCell>
         })
       }
-    </ExpandableRow>
+    </StackedRow>
   })
 
 };

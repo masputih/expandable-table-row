@@ -4,13 +4,13 @@ import TableRow from '@material-ui/core/TableRow';
 
 import './styles.scss';
 
-const ExpandableRow = props => {
+const StackedRow = props => {
 
   const [state, setState] = useState({
     expanded: false
   })
 
-  const cname = 'expandable-row';
+  const cname = 'stacked-row';
 
   return <React.Fragment>
     <TableRow className={`${cname} primary`} onClick={()=>{
@@ -33,8 +33,8 @@ const ExpandableRow = props => {
   </React.Fragment>
 }
 
-ExpandableRow.propTypes = {
+StackedRow.propTypes = {
   secondaryRenderer: PropTypes.func.isRequired
 }
 
-export default ExpandableRow;
+export default StackedRow;
